@@ -26,10 +26,10 @@ static T GetFnPtr(const char *FnName, bool WarnIfMissing) {
   if (Fn == nullptr) {
     if (WarnIfMissing) {
       const char *ErrorMsg = dlerror();
-      Printf("WARNING: Failed to find function \"%s\".", FnName);
+      printf("WARNING: Failed to find function \"%s\".", FnName);
       if (ErrorMsg)
-        Printf(" Reason %s.", ErrorMsg);
-      Printf("\n");
+        printf(" Reason %s.", ErrorMsg);
+      printf("\n");
     }
   }
   return reinterpret_cast<T>(Fn);

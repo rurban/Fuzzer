@@ -1,4 +1,5 @@
 set(LIBFUZZER_FLAGS_BASE "${CMAKE_CXX_FLAGS}")
+cmake_minimum_required(VERSION 3.7)
 # Disable the coverage and sanitizer instrumentation for the fuzzer itself.
 set(CMAKE_CXX_FLAGS "${LIBFUZZER_FLAGS_BASE} -fno-sanitize=all -fno-sanitize-coverage=edge,trace-cmp,indirect-calls,8bit-counters -Werror")
 if( LLVM_USE_SANITIZE_COVERAGE )
